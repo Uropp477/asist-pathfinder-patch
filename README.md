@@ -1,20 +1,29 @@
 # mineflayer-pathfinder 2.4.5 — community patch
 
-Fixy zebrane i przetestowane w projekcie `asist` (autonomiczny bot do Minecrafta, Paper 1.21.11):
+A drop-in patch for [mineflayer-pathfinder](https://github.com/PrismarineJS/mineflayer-pathfinder) 2.4.5,
+tested in the `asist` autonomous Minecraft bot (Paper 1.21.11, mineflayer 4.x).
 
-- **Liście (`*_leaves`) są tanie do zniszczenia** — bot przecina las zamiast stać w miejscu lub robić ogromne objazdy (fix na problem z issue #222).
-- **Otwarte drzwi** — poprawiony punkt docelowy przy drzwiach (bot nie blokuje się na skrzydle).
-- **Klapki (trapdoor)** — otwieranie zamiast niszczenia, przechodzenie przez otwarte.
-- **Pnącza (vine, weeping/twisting/cave vines)** — traktowane jako wspinaczkowe.
-- **Próg "arrived" 0.35 → 0.175** — mniej zacinania na krawędziach bloków.
-- **Lawa** — bot ucieka z lawy, zamiast omijać ją, gdy w niej stoi.
+Fixes:
 
-Część zmian inspirowana repo [mindcraft-bots/mindcraft](https://github.com/mindcraft-bots/mindcraft) (MIT).
+- **Leaves (`*_leaves`) are cheap to break** — the bot cuts through forests instead of
+  standing still or taking huge detours (related:
+  [#222](https://github.com/PrismarineJS/mineflayer-pathfinder/issues/222)).
+- **Open doors** — corrected arrival point at doors (no more blocking on the door wing).
+- **Trapdoors** — opened instead of broken; open trapdoors are passable.
+- **Vines** (`vine`, `weeping_vines`, `twisting_vines`, `cave_vines` + `_plant`) — climbable.
+- **Arrival threshold 0.35 → 0.175** — less jitter and fewer stuck-on-edge cases.
+- **Lava** — the bot escapes lava instead of avoiding it while standing in it.
 
-## Jak użyć
+Parts of the patch are adapted from
+[mindcraft-bots/mindcraft](https://github.com/mindcraft-bots/mindcraft) (MIT).
+
+## Requirements
+
+- `mineflayer-pathfinder` 2.4.5
+- `mineflayer` 4.x
+- Node.js 20+
+
+## Install
 
 ```bash
 npm install patch-package --save-dev
-# wrzuć ten plik do: patches/mineflayer-pathfinder+2.4.5.patch
-# dodaj do package.json: "postinstall": "patch-package"
-npm install
