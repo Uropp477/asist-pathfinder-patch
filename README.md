@@ -4,7 +4,7 @@ A drop-in patch for [mineflayer-pathfinder](https://github.com/PrismarineJS/mine
 tested in the `asist` autonomous Minecraft bot (Paper 1.21.11, mineflayer 4.x).
 
 Fixes:
-
+-the bot follows player smoothly, can also build up to get closer to player. Test it yourself.
 - **Leaves (`*_leaves`) are cheap to break** — the bot cuts through forests instead of
   standing still or taking huge detours (related:
   [#222](https://github.com/PrismarineJS/mineflayer-pathfinder/issues/222)).
